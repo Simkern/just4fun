@@ -4,31 +4,31 @@
 
 \usetikzlibrary{calc}
 
-\newcommand*{\base}{0.5cm}
-\newcommand*{\bs}{6*\base}
-\newcommand*{\dx}{0.1cm}%
+\newcommand*{\base}{0.35cm}
+\newcommand*{\bs  }{  6*\base}
+\newcommand*{\dx  }{0.2*\base}%
 
 \tikzset{
 	place/.style={
-    	circle,
-	    minimum size =1.5*\base,
-    	draw=black,
-	    fill=white,
-    	thick,
+    		circle,
+	    	minimum size =1.5*\base,
+    		draw=black,
+	    	fill=white,
+    		thick,
 		outer sep=0.5*\base
 	},
 	background/.style={
 		circle,
-    	minimum size =2*\base,
-	    draw=white,
-    	fill=black,
-    	very thick,
+    		minimum size =2*\base,
+	    	draw=white,
+    		fill=black,
+    		very thick,
 		outer sep=0.5*\base
 	},
 	bbox/.style n args={3}{
 		minimum size = \bs,
-    	draw = #1,
-    	very thick,
+    		draw = #1,
+    		very thick,
 		fill = #2,
 		fill opacity = #3,
 		}
@@ -53,10 +53,10 @@
         		\node (cw\x\y) [place] at (\x*\bs-\base-\dx,\y*\bs) {};
         		\node (cs\x\y) [place] at (\x*\bs,\y*\bs-\base-\dx) {};
         		{\pgfmathparse{\nums[\x+6*\y]};
-        		\node[rotate=90] at (ce\x\y.east) {\pgfmathresult};
-        		\node[rotate=180] at (cn\x\y.north) {\pgfmathresult};
-        		\node[rotate=-90] at (cw\x\y.west) {\pgfmathresult};
-        		\node at (cs\x\y.south) {\pgfmathresult};
+        		\node[rotate= 90, text=white] at (ce\x\y.east)  {\textbf{\pgfmathresult}};
+        		\node[rotate=180, text=white] at (cn\x\y.north) {\textbf{\pgfmathresult}};
+        		\node[rotate=-90, text=white] at (cw\x\y.west)  {\textbf{\pgfmathresult}};
+        		\node[text=white] at (cs\x\y.south) {\textbf{\pgfmathresult}};
         		}
         	};
         };
